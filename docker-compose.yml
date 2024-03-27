@@ -1,24 +1,27 @@
-version: '3.3'
+version: '3'
 
 services:
-  my-backend-dev:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
+  jenkins:
+    image: jenkins/jenkins:latest
+    container_name: jenkins
     ports:
-      - "4006"
+      - "8080:8080"
     volumes:
-      - .:/app
-    environment:
-      - APP_ENV=test
+      - jenkins_data:/var/jenkins_home
 
-  my-react-app-dev:
-    build:
-      context: ./notes-ui
-      dockerfile: Dockerfile
+  my-react-app-uat:
+    image: ${DOCKER_HUB_USERNAME}/${DOCKER_HUB_REPO}:my-react-app-uat
+    container_name: my-react-app-uat
     ports:
-      - "3000"
-    volumes:
-      - .:/app
-    environment:
-      - APP_ENV=test
+      - "3002:3000"
+
+  my-backend-uat:
+    image: ${DOCKER_HUB_USERNAME}/${DOCKER_HUB_REPO}:my-backend-uat
+    container_name: my-backend-uat
+    ports:
+      - "4002:4006"
+
+volumes:
+  jenkins_data:
+
+
