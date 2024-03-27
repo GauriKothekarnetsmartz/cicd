@@ -1,7 +1,7 @@
 version: '3.3'
 
 services:
-  node_app_4006:
+  my-backend-dev:
     build:
       context: ./server
       dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
     environment:
       - APP_ENV=test
 
-  node_app_3000:
+  my-react-app-dev:
     build:
       context: ./notes-ui
       dockerfile: Dockerfile
