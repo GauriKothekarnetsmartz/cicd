@@ -1,8 +1,8 @@
-FROM mysql:8.0
+FROM mysql:8.0.3
 
 ENV MYSQL_DATABASE=notes
-    MYSQL_USER=root
-    MYSQL_PASSWORD=Gaurik15#
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_PASSWORD=Gaurik15#
 
 # Copy custom SQL scripts to initialize the database
 COPY ./notes.sql /docker-entrypoint-initdb.d/
