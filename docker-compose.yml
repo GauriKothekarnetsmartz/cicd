@@ -17,6 +17,7 @@ services:
 
 
   my-db:
+      build: ./server/database
       image: dev-db:latest
       ports:
         - "3306:3306"
