@@ -18,6 +18,7 @@ services:
 
   my-db:
       build: ./server/database
+      container-name: dev-db
       ports:
         - "3306:3306"
 
