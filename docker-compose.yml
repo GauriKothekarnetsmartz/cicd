@@ -3,13 +3,13 @@ version: '3'
 services:
   my-react-app:
     build: ./notes-ui
-    image: dev-frontend:v1
+    container-name: my-react-app
     ports:
       - "3000:3000"
 
   my-backend:
     build: ./server 
-    image: dev-backend:v1
+    container-name: my-backend
     environment:
       - APP_ENV=test  
     ports:
