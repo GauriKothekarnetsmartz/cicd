@@ -3,25 +3,24 @@ version: '3'
 services:
   my-react-app:
     build: ./notes-ui
-    image: dev-frontend:v1
+    container_name: my-react-app-prod
     ports:
-      - "3000:3000"
+      - "3002:3000"
+    links:
+      - my-db
 
   my-backend:
     build: ./server 
-    image: dev-backend:v1
+    container_name: my-backend-prod
     environment:
       - APP_ENV=test  
     ports:
-      - "4006:4006"
-
+      - "4002:4006"
+    links:
+      - my-db
 
   my-db:
-      image: dev-db:latest
-      ports:
-        - "3306:3306"
-
-
-
-
-
+    build: ./server/database
+    container_name: dev-db-prod
+    ports:
+      - "3302:3306"
