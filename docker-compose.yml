@@ -6,7 +6,7 @@ services:
     container_name: my-react-app
     ports:
       - "3000:3000"
-     links:
+    links:
       - my-db
 
   my-backend:
@@ -19,14 +19,8 @@ services:
     links:
       - my-db
 
-
   my-db:
-      build: ./server/database
-      container_name: dev-db
-      ports:
-        - "3306:3306"
-
-
-
-
-
+    build: ./server/database
+    container_name: dev-db
+    ports:
+      - "3306:3306"
