@@ -5,7 +5,7 @@ services:
     build: ./notes-ui
     container_name: my-react-app-prod
     ports:
-      - "3002:3000"
+      - "3000:3000"
     links:
       - my-db
 
@@ -15,7 +15,7 @@ services:
     environment:
       - APP_ENV=test  
     ports:
-      - "4002:4006"
+      - "4006:4006"
     links:
       - my-db
 
@@ -23,4 +23,4 @@ services:
     build: ./server/database
     container_name: dev-db-prod
     ports:
-      - "3302:3306"
+      - "3306:3306"
