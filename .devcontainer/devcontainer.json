@@ -1,0 +1,11 @@
+{
+    "name": "Node.js Development",
+    "image": "node:14",
+    "extensions": [
+        "dbaeumer.vscode-eslint"
+    ],
+    "forwardPorts": [3000, 4006, 3306],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    }
+}
