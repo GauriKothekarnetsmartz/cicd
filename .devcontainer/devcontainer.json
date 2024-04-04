@@ -4,8 +4,21 @@
     "extensions": [
         "dbaeumer.vscode-eslint"
     ],
-    "forwardPorts": [3000, 4006, 3306],
+    "forwardPorts": [3000, 3306, 4006],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "apt-get update && apt install -y default-mysql-client",
+    "workspaceFolder": "/workspace",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ],
+    "runArgs": ["--init"],
+    "extensions": [],
+    "containerEnv": {
+        "MYSQL_HOST": "localhost",
+        "MYSQL_USER": "root",
+        "MYSQL_PASSWORD": "Gaurik15#",
+        "MYSQL_DATABASE": "notes"
     }
 }

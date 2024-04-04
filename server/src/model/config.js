@@ -3,7 +3,7 @@ module.exports = {
         name: 'notes',
         user: 'root',
         password: 'Gaurik15#',
-        host: 'dev-db',
+        host: 'localhost',
         dialect: process.env.APP_ENV === 'test' ? 'sqlite' : 'mysql',
         dialectOptions : process.env.APP_ENV === 'test' ? {} : {
             useUTC:false,
