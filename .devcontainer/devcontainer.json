@@ -1,6 +1,6 @@
 {
     "name": "Node.js Development",
-    "image": "node:14",
+    "image": "node:16",
     "extensions": [
         "dbaeumer.vscode-eslint"
     ],
@@ -15,7 +15,7 @@
     ],
     "runArgs": ["--init"],
     "containerEnv": {
-        "MYSQL_HOST": "<host_machine_ip>", // Replace <host_machine_ip> with the IP address or hostname of your host machine
+        "MYSQL_HOST": "0.0.0.0", // Replace <host_machine_ip> with the IP address or hostname of your host machine
         "MYSQL_USER": "root",
         "MYSQL_PASSWORD": "Gaurik15#",
         "MYSQL_DATABASE": "notes"
