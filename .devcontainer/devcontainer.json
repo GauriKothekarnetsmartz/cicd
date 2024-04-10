@@ -14,9 +14,8 @@
         "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
     ],
     "runArgs": ["--init"],
-    "extensions": [],
     "containerEnv": {
-        "MYSQL_HOST": "localhost",
+        "MYSQL_HOST": "<host_machine_ip>", // Replace <host_machine_ip> with the IP address or hostname of your host machine
         "MYSQL_USER": "root",
         "MYSQL_PASSWORD": "Gaurik15#",
         "MYSQL_DATABASE": "notes"
