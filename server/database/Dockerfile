@@ -1,4 +1,4 @@
-FROM mysql:8.0.3
+FROM mysql:latest
 
 ENV MYSQL_DATABASE=notes
 ENV MYSQL_ROOT_PASSWORD=root
