@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Check OS type
+# Check OS type of machine
 os_type=$(uname -s)
 
 # Install Docker and Git based on OS type
