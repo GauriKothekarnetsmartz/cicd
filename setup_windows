@@ -1,0 +1,23 @@
+# Check if running with elevated privileges (admin rights)
+$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+if (-not $isAdmin) {
+    Write-Host "Please run this script as an administrator."
+    Exit
+}
+
+# Install Git for Windows
+Write-Host "Installing Git for Windows..."
+Invoke-WebRequest -Uri "https://github.com/git-for-windows/git/releases/download/v2.34.1.windows.1/Git-2.34.1-64-bit.exe" -OutFile "$env:TEMP\Git-2.34.1-64-bit.exe" -UseBasicParsing
+Start-Process -FilePath "$env:TEMP\Git-2.34.1-64-bit.exe" -ArgumentList "/SILENT" -Wait
+
+# Install Docker Desktop for Windows
+Write-Host "Installing Docker Desktop for Windows..."
+Invoke-WebRequest -Uri "https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe" -OutFile "$env:TEMP\Docker Desktop Installer.exe" -UseBasicParsing
+Start-Process -FilePath "$env:TEMP\Docker Desktop Installer.exe" -ArgumentList "/S" -Wait
+
+# Clone repository
+Write-Host "Cloning repository..."
+git clone -b dev https://github.com/GauriKothekarnetsmartz/cicd.git
+
+Write-Host "Setup completed successfully."
