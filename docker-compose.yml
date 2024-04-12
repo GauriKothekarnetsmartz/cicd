@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./notes-ui:/app  # Mount the local notes-ui directory into the container
+      - ./notes-ui:/app  
     links:
       - my-db
 
@@ -19,7 +19,7 @@ services:
     ports:
       - "4006:4006"
     volumes:
-      - ./server:/app  # Mount the local server directory into the container
+      - ./server:/app  
     links:
       - my-db
 
@@ -28,5 +28,3 @@ services:
     container_name: dev-db
     ports:
       - "3306:3306"
-    volumes:
-      - ./server/database:/app 
