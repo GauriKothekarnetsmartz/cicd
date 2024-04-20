@@ -5,7 +5,7 @@ services:
     build: ./notes-ui
     container_name: my-react-app
     ports:
-      - "3001:3000"
+      - "3000:3000"
     volumes:
       - ./notes-ui:/app  
     links:
