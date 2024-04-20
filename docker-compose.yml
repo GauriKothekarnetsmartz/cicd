@@ -6,8 +6,8 @@ services:
     container_name: my-react-app
     ports:
       - "3001:3000"
-    volumes:
-      - ./notes-ui:/app  
+    # volumes:
+    #   - ./notes-ui:/app  
     links:
       - my-db
 
@@ -18,8 +18,8 @@ services:
       - APP_ENV=test  
     ports:
       - "4006:4006"
-    volumes:
-      - ./server:/app  
+    # volumes:
+    #   - ./server:/app  
     links:
       - my-db
 
@@ -28,5 +28,5 @@ services:
     container_name: dev-db
     ports:
       - "3306:3306"
-    volumes:
-      - ./server/database:/var/lib/mysql 
+    # volumes:
+    #   - ./server/database:/var/lib/mysql 
