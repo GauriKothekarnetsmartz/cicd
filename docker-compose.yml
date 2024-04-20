@@ -32,4 +32,4 @@ services:
       - ./server/database:/var/lib/mysql 
 
 volumes:
-  server-database:
+       server-database:
