@@ -5,7 +5,7 @@ services:
     build: ./notes-ui
     container_name: my-react-app
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - ./notes-ui:/app  
     links:
@@ -29,4 +29,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./server/database:/var/lib/mysql 
+      - server-database:/var/lib/mysql 
+
+volumes:
+       server-database:
