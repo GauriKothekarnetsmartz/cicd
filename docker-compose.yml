@@ -5,11 +5,9 @@ services:
     build: ./notes-ui
     container_name: my-react-app
     ports:
-      - "3002:3000"
+      - "3001:3000"
     volumes:
       - ./notes-ui:/app  
-    networks:
-      - my-network
     links:
       - my-db
 
@@ -19,11 +17,9 @@ services:
     environment:
       - APP_ENV=test  
     ports:
-      - "6379:4006"
+      - "4006:4006"
     volumes:
       - ./server:/app  
-    networks:
-      - my-network
     links:
       - my-db
 
@@ -31,16 +27,9 @@ services:
     build: ./server/database
     container_name: dev-db
     ports:
-      - "3100:3306"
+      - "3306:3306"
     volumes:
       - server-database:/var/lib/mysql 
-    networks:
-      - my-network
-
-networks:
-  my-network:
-    driver: bridge
 
 volumes:
-  server-database:
-    driver: local
+       server-database:
