@@ -19,7 +19,7 @@ services:
     environment:
       - APP_ENV=test  
     ports:
-      - "4006:4006"
+      - "6379:4006"
     volumes:
       - ./server:/app  
     networks:
@@ -31,7 +31,7 @@ services:
     build: ./server/database
     container_name: dev-db
     ports:
-      - "3306:3306"
+      - "3100:3306"
     volumes:
       - server-database:/var/lib/mysql 
     networks:
