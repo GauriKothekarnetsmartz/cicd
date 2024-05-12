@@ -8,8 +8,6 @@ services:
       - "3001:3000"
     volumes:
       - ./notes-ui:/app  
-    networks:
-      - my-network
     links:
       - my-db
 
@@ -22,8 +20,6 @@ services:
       - "4006:4006"
     volumes:
       - ./server:/app  
-    networks:
-      - my-network
     links:
       - my-db
 
@@ -34,13 +30,6 @@ services:
       - "3306:3306"
     volumes:
       - server-database:/var/lib/mysql 
-    networks:
-      - my-network
-
-networks:
-  my-network:
-    driver: bridge
 
 volumes:
-  server-database:
-    driver: local
+       server-database:
