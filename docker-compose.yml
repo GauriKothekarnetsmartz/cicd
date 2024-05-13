@@ -3,7 +3,7 @@ version: '3'
 services:
   my-react-app:
     build: ./notes-ui
-    container_name: my-react-app
+    container_name: my-react-app-uat
     ports:
       - "3001:3000"
     volumes:
@@ -13,7 +13,7 @@ services:
 
   my-backend:
     build: ./server 
-    container_name: my-backend
+    container_name: my-backend-uat
     environment:
       - APP_ENV=test  
     ports:
@@ -25,7 +25,7 @@ services:
 
   my-db:
     build: ./server/database
-    container_name: dev-db
+    container_name: dev-db-uat
     ports:
       - "3306:3306"
     volumes:
