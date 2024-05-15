@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  my-react-app:
+  my-react-app-uat:
     build: ./notes-ui
     container_name: my-react-app-uat
     ports:
@@ -11,7 +11,7 @@ services:
     links:
       - my-db
 
-  my-backend:
+  my-backend-uat:
     build: ./server 
     container_name: my-backend-uat
     environment:
@@ -23,7 +23,7 @@ services:
     links:
       - my-db
 
-  my-db:
+  my-db-uat:
     build: ./server/database
     container_name: dev-db-uat
     ports:
