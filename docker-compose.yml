@@ -29,7 +29,7 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - server-database:/var/lib/mysql 
+      - server-database-uat:/var/lib/mysql 
 
 volumes:
-       server-database:
+       server-database-uat:
