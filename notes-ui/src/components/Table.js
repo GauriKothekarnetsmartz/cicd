@@ -20,7 +20,7 @@ class Table extends Component {
 
     componentDidMount() {
         this.setState({ isLoading: true })
-        let api_url = 'http://172.171.248.78:4006/notes';
+        let api_url = 'http://172.171.248.78:4007/notes';
         fetch(api_url)
             .then(res => {
                 if(res.status >= 400) {
