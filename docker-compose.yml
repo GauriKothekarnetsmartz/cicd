@@ -9,7 +9,7 @@ services:
     volumes:
       - ./notes-ui:/app  
     links:
-      - my-db
+      - my-db-uat
 
   my-backend-uat:
     build: ./server 
@@ -21,7 +21,7 @@ services:
     volumes:
       - ./server:/app  
     links:
-      - my-db
+      - my-db-uat
 
   my-db-uat:
     build: ./server/database
