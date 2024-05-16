@@ -8,8 +8,6 @@ services:
       - "3002:3000"
     volumes:
       - ./notes-ui:/app  
-    links:
-      - my-db-uat
 
   my-backend-uat:
     build: ./server 
@@ -20,10 +18,8 @@ services:
       - "4007:4006"
     volumes:
       - ./server:/app  
-    links:
-      - my-db-uat
-
-  my-db-uat:
+      
+  dev-db-uat:
     build: ./server/database
     container_name: dev-db-uat
     ports:
