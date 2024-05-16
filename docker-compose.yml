@@ -9,7 +9,7 @@ services:
     volumes:
       - ./notes-ui:/app  
     links:
-      - my-db-prod
+      - dev-db-prod
 
   my-backend-prod:
     build: ./server 
@@ -21,9 +21,9 @@ services:
     volumes:
       - ./server:/app  
     links:
-      - my-db-prod
+      - dev-db-prod
 
-  my-db-prod:
+  dev-db-prod:
     build: ./server/database
     container_name: dev-db-prod
     ports:
