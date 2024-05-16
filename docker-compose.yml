@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   my-react-app-uat:
     build: ./notes-ui
