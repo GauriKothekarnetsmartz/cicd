@@ -2,7 +2,7 @@ module.exports = {
     database: {
         name: 'notes',
         user: 'root',
-        password: 'Gaurik15#',
+        password: 'root',
         host: 'dev-db-uat',
         dialect: process.env.APP_ENV === 'test' ? 'sqlite' : 'mysql',
         dialectOptions : process.env.APP_ENV === 'test' ? {} : {
