@@ -1,3 +1,5 @@
+version: '3'
+
 services:
   my-react-app-uat:
     build: ./notes-ui
@@ -6,6 +8,8 @@ services:
       - "3002:3000"
     volumes:
       - ./notes-ui:/app  
+    links:
+      - dev-db-prod
 
   my-backend-uat:
     build: ./server 
@@ -16,7 +20,9 @@ services:
       - "4007:4006"
     volumes:
       - ./server:/app  
-      
+    links:
+      - dev-db-prod
+
   dev-db-uat:
     build: ./server/database
     container_name: dev-db-uat
@@ -26,4 +32,4 @@ services:
       - server-database-uat:/var/lib/mysql 
 
 volumes:
-  server-database-uat:
+       server-database-uat:
