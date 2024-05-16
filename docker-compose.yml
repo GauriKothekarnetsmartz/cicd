@@ -28,4 +28,4 @@ services:
       - server-database-uat:/var/lib/mysql 
 
 volumes:
-       server-database-uat:
+  server-database-uat:
